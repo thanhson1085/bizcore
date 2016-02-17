@@ -1,0 +1,31 @@
+{
+  "name": "fe-api",
+  "version": "1.0.0",
+  "description": "API side for FE BizCore",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7",
+    "swagger-ui": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BizCore/fe-api.git"
+  },
+  "keywords": [
+    "BizCore"
+  ],
+  "author": "Nguyen Sy Thanh Son",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BizCore/fe-api/issues"
+  },
+  "homepage": "https://github.com/BizCore/fe-api#readme"
+}
