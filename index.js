@@ -26,6 +26,8 @@ var app = express();
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
+app.use(require('./middlewares/docs'));
+
 // api-json swagger
 app.get('/docs', function(req, res){
     var docs = yaml.safeLoad(fs.readFileSync('./docs/swagger.yml', 'utf8'));
