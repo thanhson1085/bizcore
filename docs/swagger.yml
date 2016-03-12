@@ -1,20 +1,23 @@
 swagger: '2.0'
 info:
-  title: FE API
-  description: Happy to code User API
+  title: Koor API
+  description: Happy to code Koor API
   version: '1.0.0'
-# the domain of the service
-# host: api.sonnguyen.ws
-# array of all schemes that your API supports
 schemes:
   - http
-# will be prefixed to all paths
+securityDefinitions:
+  Parse:
+    type: apiKey
+    name: X-Parse-Application-Id
+    in: header
 basePath: /
 produces:
   - application/json
 paths:
-  /api/v1/users/login:
+  /parse/classes/users:
     post:
+      security:
+        - Parse: []
       summary: Login with your account
       description: |
           Happy to access The System

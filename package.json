@@ -10,9 +10,11 @@
   "license": "MIT",
   "dependencies": {
     "express": "~4.2.x",
+    "js-yaml": "^3.5.4",
     "kerberos": "~0.0.x",
     "parse": "~1.6.12",
-    "parse-server": "~2.1.4"
+    "parse-server": "~2.1.4",
+    "swagger-editor": "^2.9.8"
   },
   "scripts": {
     "start": "node index.js"
