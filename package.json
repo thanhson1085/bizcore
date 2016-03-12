@@ -14,7 +14,7 @@
     "kerberos": "~0.0.x",
     "parse": "~1.6.12",
     "parse-server": "~2.1.4",
-    "swagger-ui": "^2.1.x"
+    "swagger-editor": "^2.9.8"
   },
   "scripts": {
     "start": "node index.js"

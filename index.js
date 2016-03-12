@@ -35,7 +35,7 @@ app.get('/docs', function(req, res){
 });
 
 // add-on swagger-ui
-app.use('/swagger', express.static('./node_modules/swagger-ui/dist'));
+app.use('/swagger', express.static('./node_modules/swagger-editor/'));
 
 // redirect page
 app.use('/', express.static('./docs'));

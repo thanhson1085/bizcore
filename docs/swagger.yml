@@ -5,13 +5,19 @@ info:
   version: '1.0.0'
 schemes:
   - http
-# will be prefixed to all paths
+securityDefinitions:
+  Parse:
+    type: apiKey
+    name: X-Parse-Application-Id
+    in: header
 basePath: /
 produces:
   - application/json
 paths:
-  /api/v1/users/login:
+  /parse/classes/users:
     post:
+      security:
+        - Parse: []
       summary: Login with your account
       description: |
           Happy to access The System
