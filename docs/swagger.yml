@@ -8,7 +8,7 @@ schemes:
 securityDefinitions:
   Parse:
     type: apiKey
-    name: X-Parse-Application-Id
+    name: X-Koor-Application-Id
     in: header
 basePath: /
 produces:
