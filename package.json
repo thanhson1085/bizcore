@@ -1,11 +1,11 @@
 {
-  "name": "fe-api",
+  "name": "Koor",
   "version": "1.0.0",
-  "description": "A API for BizCore",
+  "description": "A Core System for All Business",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BizCore/fe-api"
+    "url": "https://github.com/BizCore/koor"
   },
   "license": "MIT",
   "dependencies": {
