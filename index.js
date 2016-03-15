@@ -2,11 +2,12 @@ var express = require('express');
 var yaml = require('js-yaml');
 var ParseServer = require('parse-server').ParseServer;
 var fs = require('fs');
+var logger = require('./helpers/logger');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGOLAB_URI;
 
 if (!databaseUri) {
-    console.log('DATABASE_URI not specified, falling back to localhost.');
+    logger.info('DATABASE_URI not specified, falling back to localhost.');
 }
 
 var api = new ParseServer({
@@ -16,9 +17,6 @@ var api = new ParseServer({
     masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
     serverURL: process.env.SERVER_URL || 'http://localhost:1337'  // Don't forget to change to https if needed
 });
-// Client-keys like the javascript key or the .NET key are not necessary with parse-server
-// If you wish you require them, you can set them as options in the initialization above:
-// javascriptKey, restAPIKey, dotNetKey, clientKey
 
 var app = express();
 
@@ -43,5 +41,5 @@ app.use('/', express.static('./docs'));
 
 var port = process.env.PORT || 1337;
 app.listen(port, function() {
-    console.log('parse-server-example running on port ' + port + '.');
+    logger.info('parse-server-example running on port ' + port + '.');
 });
