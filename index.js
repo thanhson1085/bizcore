@@ -22,11 +22,12 @@ var api = new ParseServer({
 
 var app = express();
 
+// Change Header
+app.use(require('./middlewares/headers'));
+
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
-
-app.use(require('./middlewares/docs'));
 
 // api-json swagger
 app.get('/docs', function(req, res){
