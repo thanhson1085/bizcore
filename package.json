@@ -19,7 +19,7 @@
     "winston": "^2.2.0"
   },
   "scripts": {
-    "start": "node cli.js"
+    "start": "node ./bin/koor"
   },
   "engines": {
     "node": ">=4.3"
