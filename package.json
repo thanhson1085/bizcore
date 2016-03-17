@@ -1,23 +1,25 @@
 {
-  "name": "fe-api",
-  "version": "1.0.0",
-  "description": "A API for BizCore",
+  "name": "koor",
+  "version": "0.1.0",
+  "description": "A Core System for All Business",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BizCore/fe-api"
+    "url": "https://github.com/BizCore/koor"
   },
   "license": "MIT",
   "dependencies": {
+    "config": "^1.19.0",
     "express": "~4.2.x",
     "js-yaml": "^3.5.4",
     "kerberos": "~0.0.x",
     "parse": "~1.6.12",
     "parse-server": "~2.1.4",
-    "swagger-editor": "^2.9.8"
+    "swagger-editor": "^2.9.8",
+    "winston": "^2.2.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./bin/koor"
   },
   "engines": {
     "node": ">=4.3"
