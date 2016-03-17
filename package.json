@@ -19,7 +19,7 @@
     "winston": "^2.2.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node cli.js"
   },
   "engines": {
     "node": ">=4.3"
