@@ -24,7 +24,7 @@ var app = express();
 app.use(require('./middlewares/headers'));
 
 // Serve the Parse API on the /parse URL prefix
-var mountPath = process.env.PARSE_MOUNT || '/parse';
+var mountPath = process.env.PARSE_MOUNT || '/koor';
 app.use(mountPath, api);
 
 // api-json swagger
