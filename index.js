@@ -1,6 +1,7 @@
 var ParseServer = require('parse-server').ParseServer;
 var logger = require('./helpers/logger');
 var express = require('express');
+var yaml = require('js-yaml');
 var config = require('config');
 
 module.exports = {
