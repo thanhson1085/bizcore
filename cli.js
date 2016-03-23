@@ -1,6 +1,6 @@
 var express = require('express');
 var yaml = require('js-yaml');
-var ParseServer = require('parse-server').ParseServer;
+var KoorServer = require('parse-server').ParseServer;
 var fs = require('fs');
 var logger = require('./helpers/logger');
 
@@ -10,12 +10,12 @@ if (!databaseUri) {
     logger.info('DATABASE_URI not specified, falling back to localhost.');
 }
 
-var api = new ParseServer({
+var api = new KoorServer({
     databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
     cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
     appId: process.env.APP_ID || 'myAppId',
-    masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-    serverURL: process.env.SERVER_URL || 'http://localhost:1337'  // Don't forget to change to https if needed
+    masterKey: process.env.MASTER_KEY || '',
+    serverURL: process.env.SERVER_URL || 'http://localhost:1337'
 });
 
 var app = express();
@@ -23,8 +23,7 @@ var app = express();
 // Change Header
 app.use(require('./middlewares/headers'));
 
-// Serve the Parse API on the /parse URL prefix
-var mountPath = process.env.PARSE_MOUNT || '/koor';
+var mountPath = process.env.KOOR_MOUNT || '/koor';
 app.use(mountPath, api);
 
 // api-json swagger
@@ -41,5 +40,5 @@ app.use('/', express.static('./docs'));
 
 var port = process.env.PORT || 1337;
 app.listen(port, function() {
-    logger.info('parse-server-example running on port ' + port + '.');
+    logger.info('Koor Server running on port ' + port + '.');
 });
