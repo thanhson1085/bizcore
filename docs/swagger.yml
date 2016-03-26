@@ -6,7 +6,7 @@ info:
 schemes:
   - http
 securityDefinitions:
-  Parse:
+  Koor:
     type: apiKey
     name: X-Koor-Application-Id
     in: header
@@ -17,7 +17,7 @@ paths:
   /parse/classes/users:
     post:
       security:
-        - Parse: []
+        - Koor: []
       summary: Login with your account
       description: |
           Happy to access The System
