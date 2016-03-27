@@ -15,7 +15,7 @@ var api = new KoorServer({
     cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
     appId: process.env.APP_ID || 'myAppId',
     masterKey: process.env.MASTER_KEY || '',
-    serverURL: process.env.SERVER_URL || 'http://localhost:1337'
+    serverURL: process.env.SERVER_URL || 'http://localhost:1337/koor'
 });
 
 var app = express();
