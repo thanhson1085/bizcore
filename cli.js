@@ -1,6 +1,7 @@
 var express = require('express');
 var yaml = require('js-yaml');
 var KoorServer = require('parse-server').ParseServer;
+var bodyParser = require('body-parser');
 var fs = require('fs');
 var logger = require('./helpers/logger');
 
@@ -20,8 +21,13 @@ var api = new KoorServer({
 
 var app = express();
 
+// body parse
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Change Header
 app.use(require('./middlewares/headers'));
+app.use(require('./middlewares/params'));
 
 var mountPath = process.env.KOOR_MOUNT || '/koor';
 app.use(mountPath, api);

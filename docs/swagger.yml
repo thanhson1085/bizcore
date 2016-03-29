@@ -14,29 +14,23 @@ basePath: /
 produces:
   - application/json
 paths:
-  /parse/classes/users:
-    post:
+  /koor/classes/users:
+    get:
       security:
         - Koor: []
-      summary: Login with your account
+      summary: Get User Data By Username
       description: |
           Happy to access The System
       parameters:
         - name: username
           in: formData
-          description: username for login
-          required: true
-          type: string
-          format: string
-        - name: password
-          in: formData
-          description: password for login
+          description: username
           required: true
           type: string
           format: string
       responses:
         200:
-            description: Returns a access token
+            description: Returns a user data
         401:
             description: Unauthorized
         400:
