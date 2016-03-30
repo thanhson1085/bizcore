@@ -23,7 +23,7 @@ paths:
           Happy to access The System
       parameters:
         - name: username
-          in: formData
+          in: query
           description: username
           required: true
           type: string

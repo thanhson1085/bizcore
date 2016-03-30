@@ -16,6 +16,7 @@ module.exports = {
     getApp: function () {
         var app = express();
         app.use(require('./middlewares/headers'));
+        app.use(require('./middlewares/params'));
 
         return app;
     }
